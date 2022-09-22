@@ -27,7 +27,6 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 	
-	@GetMapping("/all")
 	@RequestMapping(value = "/all",method = RequestMethod.GET)
 	public List<Employee> getAllEmployee(){
 		return employeeService.findAll();
@@ -35,7 +34,6 @@ public class EmployeeController {
 	}
 	
 
-	@GetMapping("/all/{id}")
 	@RequestMapping(value = "/all/{id}",method = RequestMethod.GET)
 	public Optional<Employee> getEmployee(@PathVariable("employeeId") int employeeId) {
 		return employeeService.findById(employeeId);
